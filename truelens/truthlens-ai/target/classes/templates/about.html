@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – TruthLens AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<section class="page-header-section">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">About</li>
+            </ol>
+        </nav>
+        <h1 class="page-header-title">About TruthLens AI</h1>
+        <p class="page-header-subtitle">Our mission, technology, and commitment to news transparency</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row gy-5">
+            <!-- Mission -->
+            <div class="col-lg-6">
+                <div class="about-card h-100">
+                    <div class="about-icon"><i class="bi bi-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>TruthLens AI exists to fight misinformation by giving every citizen the tools
+                    to verify news before sharing it. In an era of viral falsehoods and echo chambers,
+                    we believe informed readers are the best defense against the spread of fake news.</p>
+                    <p>We combine keyword analysis, source credibility scoring, and corpus matching
+                    to produce fast, explainable verdicts — with full transparency about how each
+                    conclusion was reached.</p>
+                </div>
+            </div>
+
+            <!-- Technology -->
+            <div class="col-lg-6">
+                <div class="about-card h-100">
+                    <div class="about-icon"><i class="bi bi-cpu"></i></div>
+                    <h3>Technology Stack</h3>
+                    <ul class="about-tech-list">
+                        <li><i class="bi bi-check2-circle text-success me-2"></i>
+                            <strong>Spring Boot 3.2</strong> — MVC + REST API backend</li>
+                        <li><i class="bi bi-check2-circle text-success me-2"></i>
+                            <strong>MySQL</strong> — Trusted article corpus database</li>
+                        <li><i class="bi bi-check2-circle text-success me-2"></i>
+                            <strong>Bootstrap 5</strong> — Responsive UI components</li>
+                        <li><i class="bi bi-check2-circle text-success me-2"></i>
+                            <strong>Thymeleaf</strong> — Server-side template engine</li>
+                        <li><i class="bi bi-check2-circle text-success me-2"></i>
+                            <strong>JavaScript Fetch API</strong> — Async REST communication</li>
+                        <li><i class="bi bi-check2-circle text-success me-2"></i>
+                            <strong>Spring Data JPA</strong> — Repository pattern with Hibernate</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- How verification works -->
+            <div class="col-12">
+                <div class="about-card">
+                    <div class="about-icon"><i class="bi bi-diagram-3"></i></div>
+                    <h3>How the Verification Engine Works</h3>
+                    <div class="row gy-3 mt-2">
+                        <div class="col-md-4">
+                            <div class="about-step">
+                                <span class="about-step-num">1</span>
+                                <h6>Keyword Extraction</h6>
+                                <p class="small text-muted">Submitted text is tokenized and stop-words are filtered. Meaningful unigrams and bigrams are extracted as search terms.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-step">
+                                <span class="about-step-num">2</span>
+                                <h6>Category Detection</h6>
+                                <p class="small text-muted">Signal keywords map the content to one of five categories: International, National, Politics, Sports, or Technology.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-step">
+                                <span class="about-step-num">3</span>
+                                <h6>Source Retrieval</h6>
+                                <p class="small text-muted">Up to 10 candidate articles are retrieved from the trusted corpus using full-text keyword queries.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-step">
+                                <span class="about-step-num">4</span>
+                                <h6>Similarity Scoring</h6>
+                                <p class="small text-muted">Each candidate is scored on keyword overlap, title match weight, content depth, and source credibility.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-step">
+                                <span class="about-step-num">5</span>
+                                <h6>Verdict Derivation</h6>
+                                <p class="small text-muted">Scores are aggregated into a confidence percentage. Thresholds determine Likely True, Likely False, or Needs Verification.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about-step">
+                                <span class="about-step-num">6</span>
+                                <h6>Results &amp; References</h6>
+                                <p class="small text-muted">The result is saved with matched source references and a human-readable explanation for full transparency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future roadmap -->
+            <div class="col-lg-6">
+                <div class="about-card h-100">
+                    <div class="about-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                    <h3>Future Roadmap</h3>
+                    <p>The codebase is architected for easy external API integration:</p>
+                    <ul class="about-tech-list">
+                        <li><i class="bi bi-circle text-primary me-2"></i>
+                            <strong>NewsAPI.org</strong> — Live global news ingestion</li>
+                        <li><i class="bi bi-circle text-primary me-2"></i>
+                            <strong>Google Fact Check Tools API</strong> — Crowd-sourced fact checks</li>
+                        <li><i class="bi bi-circle text-primary me-2"></i>
+                            <strong>OpenAI GPT</strong> — Semantic similarity and explanation</li>
+                        <li><i class="bi bi-circle text-primary me-2"></i>
+                            <strong>Tesseract / Google Vision</strong> — Server-side OCR for images</li>
+                        <li><i class="bi bi-circle text-primary me-2"></i>
+                            <strong>Reuters / AP Wire</strong> — Real-time trusted source feeds</li>
+                    </ul>
+                    <p class="small text-muted mt-3">
+                        API keys can be added to <code>application.properties</code> without
+                        changing the core service layer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Trusted sources -->
+            <div class="col-lg-6">
+                <div class="about-card h-100">
+                    <div class="about-icon"><i class="bi bi-patch-check"></i></div>
+                    <h3>Trusted Source Network</h3>
+                    <p>Our reference corpus draws from the world's most credible news organizations:</p>
+                    <div class="trusted-sources-grid">
+                        <span class="trusted-source-badge">Reuters</span>
+                        <span class="trusted-source-badge">Associated Press</span>
+                        <span class="trusted-source-badge">BBC News</span>
+                        <span class="trusted-source-badge">The Guardian</span>
+                        <span class="trusted-source-badge">NPR</span>
+                        <span class="trusted-source-badge">Al Jazeera</span>
+                        <span class="trusted-source-badge">ABC News</span>
+                        <span class="trusted-source-badge">ESPN</span>
+                        <span class="trusted-source-badge">TechCrunch</span>
+                        <span class="trusted-source-badge">Wired</span>
+                    </div>
+                    <p class="small text-muted mt-3">
+                        Credibility scores (0–100) are assigned to each source based on
+                        editorial standards, fact-checking policies, and correction transparency.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-5">
+            <a href="/verify" class="btn btn-primary btn-lg px-5 me-3">
+                <i class="bi bi-shield-check me-2"></i>Start Verifying
+            </a>
+            <a href="/news" class="btn btn-outline-primary btn-lg px-5">
+                <i class="bi bi-newspaper me-2"></i>Browse News
+            </a>
+        </div>
+    </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
