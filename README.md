@@ -40,6 +40,8 @@ The platform compares submitted content with trusted news sources and provides a
 * Search and filter news
 
 * Responsive and user-friendly interface
+  
+* AI Powered chatbot
 
 ---
 
